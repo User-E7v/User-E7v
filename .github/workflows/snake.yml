@@ -1,9 +1,9 @@
-name: Generate Datas
+name: Generate Professional Snake
 
 on:
-  schedule: # يشتغل تلقائياً كل 24 ساعة
+  schedule:
     - cron: "0 */24 * * *" 
-  workflow_dispatch: # زر التشغيل اليدوي اللي بتدور عليه
+  workflow_dispatch: 
   push:
     branches:
     - main
@@ -16,18 +16,18 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      # Snake Animation
+      # Snake Animation مع تعديلات السرعة والألوان
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=#3c7dd9&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#f7df1e&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
           
-      # Push the changes
+      # رفع الملفات لفرع output باستخدام أحدث نسخة
       - name: push github-contribution-grid-snake.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
