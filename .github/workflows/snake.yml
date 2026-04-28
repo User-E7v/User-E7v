@@ -1,0 +1,4 @@
+on:
+  workflow_dispatch: # ده اللي بيخليك تشغلها يدوي
+  schedule:
+    - cron: "0 */24 * * *"
