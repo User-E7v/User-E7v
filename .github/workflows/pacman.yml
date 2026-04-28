@@ -1,0 +1,37 @@
+name: Generate Pacman Animation
+
+on:
+  schedule:
+    - cron: "0 */24 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    permissions: 
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      # توليد أنيميشن باك مان الأصلي
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: pacman.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          # هنا بنحدد شكل باك مان
+          config_order: isocalendar
+          template: repository
+          plugin_languages: no
+          
+      # رفع الملف لفرع الـ output
+      - name: push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
