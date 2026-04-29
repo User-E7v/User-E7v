@@ -100,9 +100,11 @@
 
 <br clear="both">
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/User-E7v/User-E7v/output/pacman.svg" alt="Pacman Animation" width="100%" />
-</div>
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/User-E7v/User-E7v/output/pacman-contribution-graph-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/User-E7v/User-E7v/output/pacman-contribution-graph.svg">
+    <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/User-E7v/User-E7v/output/pacman-contribution-graph.svg">
+</picture>
 
 ###
 
