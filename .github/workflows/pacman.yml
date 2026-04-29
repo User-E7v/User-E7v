@@ -2,8 +2,9 @@ name: Generate Pacman Animation
 
 on:
   schedule:
-    - cron: "0 */24 * * *"
-  workflow_dispatch:
+    # تم تغييرها لتكون مرة واحدة يومياً في وقت هادئ (مثلاً الساعة 12 ليلاً)
+    - cron: "0 0 * * *"
+  workflow_dispatch: # للسماح بالتشغيل اليدوي عند الحاجة
   push:
     branches:
       - main
@@ -13,25 +14,25 @@ jobs:
     permissions: 
       contents: write
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # إضافة وقت مستقطع لتجنب استمرار العمليات العالقة
+
     steps:
-      # توليد أنيميشن باك مان الأصلي
-      - uses: lowlighter/metrics@latest
+      - name: Generate Pacman Animation
+        uses: lowlighter/metrics@latest
         with:
           filename: pacman.svg
           token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
+          base: "" # إخفاء البيانات الافتراضية للتركيز على الأنيميشن فقط
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
-          # هنا بنحدد شكل باك مان
+          config_timezone: Africa/Cairo # ضبط التوقيت المحلي لضمان دقة التحديث
           config_order: isocalendar
-          template: repository
-          plugin_languages: no
           
-      # رفع الملف لفرع الـ output
-      - name: push to output branch
+      - name: Push to Output Branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: .
+          keep_history: false # يفضل ضبطها على false لتقليل حجم المستودع، حيث أنك تحتاج فقط لآخر نسخة من الصورة
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
