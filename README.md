@@ -115,7 +115,7 @@
 ###
 
 <div align="center">
-  <img src="https://github-readme-3d-graph.vercel.app/api?username=User-E7v&theme=dracula&background=00000000" alt="3D Skyline Graph" />
+  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" />
 </div>
 
 <div align="center">
