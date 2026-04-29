@@ -115,6 +115,10 @@
 ###
 
 <div align="center">
+  <img src="https://github-readme-3d-graph.vercel.app/api?username=User-E7v&theme=dracula&background=00000000" alt="3D Skyline Graph" />
+</div>
+
+<div align="center">
   <a href="https://open.spotify.com/user/31ymx72tqqyrzr4cydrj3ijx25sm">
     <img src="https://spotify-recently-played-readme.vercel.app/api?user=31ymx72tqqyrzr4cydrj3ijx25sm&count=5" alt="Spotify recently played"  />
   </a>
