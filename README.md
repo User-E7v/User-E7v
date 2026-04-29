@@ -101,7 +101,7 @@
 <br clear="both">
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/User-E7v/User-E7v/output/pacman.svg" alt="Pacman Activity" width="100%" />
+  <img src="https://raw.githubusercontent.com/User-E7v/User-E7v/output/pacman.svg" alt="Pacman Animation" width="100%" />
 </div>
 
 ###
