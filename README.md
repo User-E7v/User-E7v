@@ -114,9 +114,7 @@
 
 ###
 
-<div align="center">
-  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" />
-</div>
+
 
 <div align="center">
   <a href="https://open.spotify.com/user/31ymx72tqqyrzr4cydrj3ijx25sm">
